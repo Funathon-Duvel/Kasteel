@@ -7,8 +7,9 @@ def getInputFilePath():
 def getOutputFilePath():    
     return os.getenv('OUTPUT_FILE', 'output.csv')
 
+# Get city name in additionnal arguments
 def getCity():
-    return os.getenv('CITY', 'Paris')
+    return os.getenv('ARGS', 'Paris')
 
 
 # Path to the input file (.csv)
