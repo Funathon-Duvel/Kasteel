@@ -40,8 +40,10 @@ def dollarsToEuros(dollar):
 # ============ treatment ============== #
 
 outputData = inputData.copy()
+print(f"Add city column (city = {city})")
 outputData['city']='Paris'
 # change dollars to euros
+print("Changing dollars to euros ...")
 outputData['price']= outputData['price'].apply(dollarsToEuros)
 # Filter columns
 outputData = outputData[['id','name','latitude','longitude','price','number_of_reviews','city']]
