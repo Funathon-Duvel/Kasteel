@@ -24,7 +24,7 @@ print('Env variables read in the program')
 print('=================================')
 print('INPUT_FILE path :', inputFile)
 print('OUTPUT_FILE path:', outputFile)
-print('CITY :', city)
+print('ARGS :', city)
 print('=================================')
 
 # Read csv into DataFrame
@@ -42,7 +42,7 @@ def dollarsToEuros(dollar):
 
 outputData = inputData.copy()
 print(f"Add city column (city = {city})")
-outputData['city']='Paris'
+outputData['city']=city
 # change dollars to euros
 print("Changing dollars to euros ...")
 outputData['price']= outputData['price'].apply(dollarsToEuros)
