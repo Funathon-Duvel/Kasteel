@@ -6,4 +6,4 @@ External resources for Funathon Duvel pipelines
 
 Sample :
 
-https://funathon-duvel.github.io/Kasteel/my-file.json
+https://funathon-duvel.github.io/Kasteel/README.md
