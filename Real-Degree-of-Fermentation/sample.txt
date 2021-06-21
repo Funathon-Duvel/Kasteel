@@ -1,0 +1,5 @@
+select * where { 
+    SERVICE <https://graphdb.linked-open-statistics.org/repositories/census-point> {
+	    ?s ?p ?o .
+    }
+} limit 100 
