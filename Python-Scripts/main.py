@@ -36,7 +36,7 @@ def dollarsToEuros(dollar):
     Convert dollar to euros (valid in 21/06/2021)
     The input format is '$1,200.35'
     """
-    return 0.84*float(dollar[1::].replace(',',''))
+    return round(0.84*float(dollar[1::].replace(',','')))
 
 # ============ treatment ============== #
 
