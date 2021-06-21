@@ -45,5 +45,11 @@ outputData['city']='Paris'
 outputData['price']= outputData['price'].apply(dollarsToEuros)
 # Filter columns
 outputData = outputData[['id','name','latitude','longitude','price','number_of_reviews','city']]
+
+print("Check transformation")
+print(outputData.head(2))
+print("Write the output to the file ", outputFile)
+
 # Put the dataFrame to the output
 outputData.to_csv(outputFile,sep=';')
+
