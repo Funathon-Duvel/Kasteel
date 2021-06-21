@@ -2,7 +2,6 @@
   {
     "title": "Sample",
     "route": "/sample",
-    "query": "https://funathon-duvel.github.io/Kasteel/Real-Degree-of-Fermentation/sample.txt",
-    "test": "true"
+    "query": "https://funathon-duvel.github.io/Kasteel/Real-Degree-of-Fermentation/sample.txt"
   }
 ]
