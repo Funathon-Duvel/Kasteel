@@ -1,5 +1,11 @@
 [
   {
+    "title": "Bordeaux",
+    "route": "/bordeaux",
+    "query": "https://funathon-duvel.github.io/Kasteel/Real-Degree-of-Fermentation/map-bordeaux.rq",
+    "housingQuery": "https://funathon-duvel.github.io/Kasteel/Real-Degree-of-Fermentation/housing-bordeaux.rq"
+  },
+  {
     "title": "Lyon",
     "route": "/lyon",
     "query": "https://funathon-duvel.github.io/Kasteel/Real-Degree-of-Fermentation/map-lyon.rq",

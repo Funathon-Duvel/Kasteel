@@ -1,0 +1,9 @@
+PREFIX duvel: <https://duvel.dev.insee.io/housing#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+select * where { 
+    SERVICE <https://graphdb.linked-open-statistics.org/repositories/funathon-bordeaux> {
+	    ?value a duvel:Housing .
+        ?value skos:prefLabel ?label
+    }
+} limit 100

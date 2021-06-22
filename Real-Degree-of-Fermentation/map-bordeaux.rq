@@ -1,0 +1,24 @@
+PREFIX org: <http://www.w3.org/ns/org#>
+PREFIX dim-etab: <http://id.insee.fr/sirene/etablissement/>
+PREFIX geo-pos: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX gn: <http://www.geonames.org/ontology#>
+PREFIX omgeo: <http://www.ontotext.com/owlim/geo#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+
+SELECT DISTINCT ?polygon ?population ?latitude ?longitude WHERE {
+    {
+        SELECT ?latitude ?longitude WHERE {
+            SERVICE <https://graphdb.linked-open-statistics.org/repositories/funathon-bordeaux> {
+                HOUSING geo-pos:long ?longitude ;
+	                     geo-pos:lat ?latitude .
+	                     FILTER(STR(?longitude) != '')
+                }
+        }
+    }
+    SERVICE <https://graphdb.linked-open-statistics.org/repositories/census-point> {
+        ?c omgeo:nearby(?latitude ?longitude "1km") ;
+             gn:population ?population ;
+             geo:hasGeometry ?geo .
+          ?geo geo:asWKT ?polygon
+    }
+}
