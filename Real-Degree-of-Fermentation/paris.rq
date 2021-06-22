@@ -14,7 +14,7 @@ SELECT DISTINCT ?polygon ?population ?latitude ?longitude WHERE {
         }
     }
     SERVICE <https://graphdb.linked-open-statistics.org/repositories/census-point> {
-        ?c omgeo:nearby(?latitude ?longitude "10km") ;
+        ?c omgeo:nearby(?latitude ?longitude "1km") ;
              gn:population ?population ;
              geo:hasGeometry ?geo .
           ?geo geo:asWKT ?polygon
