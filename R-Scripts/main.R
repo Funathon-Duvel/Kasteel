@@ -20,9 +20,9 @@ cat("ARGS :", city)
 print("=================================")
 
 print("Read inputFile")
-df <- read_csv(inputFile)
+inputData <- read_csv(inputFile)
 # save manipulated data to output folder
 
 # simple copy of input to the output
 print("Write data to the output")
-write_csv(df, outputFile)
+write_csv(inputData, outputFile)
