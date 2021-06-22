@@ -1,14 +1,22 @@
-PREFIX duvel: <https://duvel.dev.insee.io/housing#>
+PREFIX org: <http://www.w3.org/ns/org#>
+PREFIX dim-etab: <http://id.insee.fr/sirene/etablissement/>
+PREFIX geo-pos: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX gn: <http://www.geonames.org/ontology#>
 PREFIX omgeo: <http://www.ontotext.com/owlim/geo#>
 PREFIX geo: <http://www.opengis.net/ont/geosparql#>
-PREFIX wgs: <http://www.w3.org/2003/01/geo/wgs84_pos#>
 
-select ?polygon ?lat ?long where { 
-    SERVICE <https://graphdb.linked-open-statistics.org/repositories/census-point> {
-        ?c geo:asWKT ?polygon .
+SELECT DISTINCT ?polygon ?population WHERE {
+    {
+        SELECT ?latitude ?longitude WHERE {
+            <https://duvel.dev.insee.io/housing#8771129> geo-pos:long ?longitude ;
+	                 geo-pos:lat ?latitude .
+	                 FILTER(STR(?longitude) != '')
+        }
     }
-    ?duvel a duvel:Housing .
-    ?duvel wgs:lat ?lat .
-    ?duvel wgs:long ?long .
-	?point omgeo:nearby(?lat ?long "1km")
-} limit 1000
+    SERVICE <https://graphdb.linked-open-statistics.org/repositories/census-point> {
+        ?c omgeo:nearby(?latitude ?longitude "10km") ;
+             gn:population ?population ;
+             geo:hasGeometry ?geo .
+          ?geo geo:asWKT ?polygon
+    }
+}
