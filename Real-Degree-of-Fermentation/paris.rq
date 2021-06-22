@@ -5,7 +5,7 @@ PREFIX gn: <http://www.geonames.org/ontology#>
 PREFIX omgeo: <http://www.ontotext.com/owlim/geo#>
 PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 
-SELECT DISTINCT ?polygon ?population WHERE {
+SELECT DISTINCT ?polygon ?population ?latitude ?longitude WHERE {
     {
         SELECT ?latitude ?longitude WHERE {
             <https://duvel.dev.insee.io/housing#8771129> geo-pos:long ?longitude ;
