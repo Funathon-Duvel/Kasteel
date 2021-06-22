@@ -11,4 +11,4 @@ select ?polygon ?lat ?long where {
     ?duvel wgs:lat ?lat .
     ?duvel wgs:long ?long .
 	?point omgeo:nearby(?lat ?long "1km")
-}
+} limit 1000
