@@ -2,7 +2,7 @@
   {
     "title": "Paris",
     "route": "/paris",
-    "query": "https://funathon-duvel.github.io/Kasteel/Real-Degree-of-Fermentation/paris.rq",
+    "query": "https://funathon-duvel.github.io/Kasteel/Real-Degree-of-Fermentation/map.rq",
     "housingQuery": "https://funathon-duvel.github.io/Kasteel/Real-Degree-of-Fermentation/housing-paris.rq"
   }
 ]
