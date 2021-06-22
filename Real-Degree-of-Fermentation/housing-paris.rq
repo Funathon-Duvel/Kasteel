@@ -4,4 +4,4 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 select * where { 
 	?value a duvel:Housing .
     ?value skos:prefLabel ?label
-}
+} limit 100
