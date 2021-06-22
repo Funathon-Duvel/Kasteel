@@ -1,0 +1,15 @@
+PREFIX duvel: <https://duvel.dev.insee.io/housing#>
+PREFIX omgeo: <http://www.ontotext.com/owlim/geo#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX wgs: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+
+select ?polygon where { 
+    SERVICE <https://graphdb.linked-open-statistics.org/repositories/census-point> {
+        ?c geo:asWKT ?polygon .
+    }
+#    ?duvel a duvel:Housing .
+#    ?duvel wgs:lat ?lat .
+#    ?duvel wgs:long ?long .
+#    ?duvel geo:asWKT ?point .
+#	?point omgeo:within(?polygon)
+}
